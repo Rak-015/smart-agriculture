@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+
+
+<!-- ======= Services Section ======= -->
+<section id="services" class="services"style="margin-left: 70px;">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Plant Disease Prediction</h2>
+        
+      </div>
+      <form id="contact" action="{% url 'result' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                  <h1>{{msg}}</h1>
+                    <label for="pwd">Upload Image</label>
+                    <fieldsetx>
+                        <input type="file" class="form-control" id="pwd" accept="image/*" required="" multiple="" name="file" style="padding-right: 20px;padding-left: 146px;">
+                </div>
+                <select name="alg">
+                    <option  value="-1" >Choose Model</option>
+                    <option  value="4">MobileNet</option>
+                </select>
+                </fieldset>
+            </div>
+            <div class="col-md-8">
+                <fieldset style="height:40px;">
+                </fieldset>
+            </div>
+            <div class="col-md-10">
+                <fieldset>
+                    <button type="submit" id="form-submit" class="button">Submit</button>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+      
+
+
+  {% endblock %}

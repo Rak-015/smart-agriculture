@@ -1,0 +1,47 @@
+{% extends "base1.html" %}
+
+{% block main %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+        <main id="main">
+            <section class="container">
+                <h2 class="text-center mb-4" style="color: azure;">LOGIN PAGE</h2>
+                <form method="post" class="form-group">
+                    {% csrf_token %}
+                    
+                    
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label" style="color: azure;">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label" style="color: azure;">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li style="color: azure;"><h2>{{ message }}</h2></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section><!-- End Hero -->
+
+
+<main id="main">
+
+
+
+
+    {% endblock %}

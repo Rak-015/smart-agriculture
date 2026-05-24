@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+
+    <div class="container">
+        <div class="container" data-page-no="1">
+
+            <div class="row">
+                {% csrf_token %}
+
+                <div class="col-lg-6">
+                    <!--                            <i class="fas fa-leaf fa fa-4x"></i>-->
+                    <div class="container">
+                        <img src="{{path}}" style="width:200px;height:200px;"><br>
+                        <h3 style="color:rgb(22, 17, 17);width: 1307px;">{{ text }} {{ a }}</h3>
+                        <h3>
+                            <p style="color:rgb(14, 13, 13);width:900px;">{{ msg }}</p>
+                        </h3>
+                        <centre style="width:30px;"> <a style="text-decoration: none; display: block; margin: 50px auto;" class="btn btn-primary btn-block btn-large" href="/plantprediction" role="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Predict Another image</a>
+                        </centre>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        {% endblock %}

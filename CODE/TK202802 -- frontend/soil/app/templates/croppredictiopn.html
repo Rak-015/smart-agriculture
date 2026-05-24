@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+
+
+<section id="resume" class="resume">
+    <div class="container">
+
+        <div class="section-title" style="    margin-left: 42px;">
+            <h2>Crop Prediction</h2>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+                <!-- <h3 class="resume-title">Sumary</h3> -->
+                <div class="resume-item pb-0" style="    margin-left: 47px;">
+                    <form action="{% url 'croppredictiopn' %}" method="post">
+                        {% csrf_token %}
+                        <center>
+                            <center><b style="color: rgb(0, 0, 0);font-size: 50px;">{{msg}}</b></center><br><br>
+                          
+                        </center><br><br>
+                        <center>
+
+                            <table style="color:black">
+
+                                <td style="color:red">
+                                    <tr>
+                                        <td>Enter Nitrogen Level:</td>
+                                        <td><input type='number' name='N' placeholder="Nitrogen" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enter Phosporous Level:</td>
+                                        <td><input type='number' name='P' placeholder="Phosphorus" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enter Potasioum Level:</td>
+                                        <td><input type='number' name='K' placeholder="Pottasium" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enter Temparature Level:</td>
+                                        <td><input type='number' name='temperature' step=0.01 placeholder="Temperature" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enter Humidity Level:</td>
+                                        <td> <input type='number' name='humidity' step=0.01 placeholder="Humidity" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enter PH Level:</td>
+                                        <td><input type='number' name='ph' placeholder="PH" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enter Rainfall Level:</td>
+                                        <td> <input type='number' name='rainfall' step=0.01 placeholder="Rainfall"
+                                                required><br><br></td>
+                                    </tr>
+                                </td>
+                            </table>
+                            <table>
+                                <td>
+                                    <br>
+
+                                    <input type="submit" value="Recommend" class="btn btn-info">
+                                </td>
+                            </table>
+
+                            
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br><br>
+    <h1 style="padding-left: 650px; color: black;"><u>ACCURACY</u></h1>
+    <img src="/static/img/graph.PNG" style="padding-left: 350px;">
+
+    </div>
+</section>
+
+{% endblock %}
